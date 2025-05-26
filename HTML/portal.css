@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Events</title>
+  <style>
+    /* Base & Layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header, footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: red; /* Inline example moved to CSS */
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Sections */
+    .section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Events */
+    .event-card {
+      background: #f8f9fa;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 4px solid #007bff;
+      border-radius: 8px;
+    }
+
+    .event-card h3 {
+      color: #007bff;
+    }
+
+    .event-price {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label, input, select, textarea {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery-item p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Community Events</h1>
+    <p>Join your neighbors for local events and activities</p>
+  </header>
+
+  <div class="container">
+    <!-- Events -->
+    <section class="section">
+      <h2>Upcoming Events</h2>
+      <div class="event-card">
+        <h3>Summer Concert</h3>
+        <p>Live music in the park with local bands</p>
+        <p class="event-price">Price: $25</p>
+      </div>
+      <div class="event-card">
+        <h3>Food Festival</h3>
+        <p>Taste delicious food from local vendors</p>
+        <p class="event-price">Price: $15</p>
+      </div>
+      <div class="event-card">
+        <h3>Art Workshop</h3>
+        <p>Creative workshop for all ages</p>
+        <p class="event-price">Price: $10</p>
+      </div>
+      <div class="event-card">
+        <h3>Community Cleanup</h3>
+        <p>Help keep our neighborhood clean</p>
+        <p class="event-price">Price: Free</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section">
+      <h2>Event Photos</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=300&h=200&fit=crop" alt="Concert">
+          <p>Summer Concert</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=200&fit=crop" alt="Food Festival">
+          <p>Food Festival</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&h=200&fit=crop" alt="Art Workshop">
+          <p>Art Workshop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="section">
+      <h2>Register for Events</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" />
+        </div>
+        <div class="form-group">
+          <label for="eventType">Choose Event</label>
+          <select id="eventType" required>
+            <option value="">Select an event</option>
+            <option value="concert">Summer Concert - $25</option>
+            <option value="festival">Food Festival - $15</option>
+            <option value="workshop">Art Workshop - $10</option>
+            <option value="cleanup">Community Cleanup - Free</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Notes</label>
+          <textarea id="message" rows="4" placeholder="Any special requirements..."></textarea>
+        </div>
+        <button type="submit">Register Now</button>
+        <button type="button" onclick="clearForm()">Clear Form</button>
+      </form>
+      <div id="successMessage" class="success-message">
+        Thank you for registering! We'll contact you soon.
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong> events@community.gov</p>
+      <p><strong>Phone:</strong> (555) 123-CITY</p>
+      <p><strong>Address:</strong> 123 City Hall Drive, Community City</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Community Events. Making our community stronger!</p>
+  </footer>
+
+  <script>
+    // Submit form
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const event = document.getElementById('eventType').value;
+
+      if (name && event) {
+        document.getElementById('successMessage').style.display = 'block';
+        this.reset();
+      }
+    });
+
+    // Clear form
+    function clearForm() {
+      document.getElementById('registrationForm').reset();
+      document.getElementById('successMessage').style.display = 'none';
+    }
+
+    // Enlarge image on click
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', function () {
+        this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+      });
+    });
+  </script>
+</body>
+</html>
