@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Event Portal</title>
+
+  <!-- ✅ Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      margin-bottom: 2rem;
+    }
+
+    .gallery img {
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .success-message {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="container">
+    <h1 class="display-5">Community Event Portal</h1>
+    <p class="lead">Connecting our community through events and activities</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="container mb-4">
+    <ul class="nav justify-content-center bg-white rounded-pill py-2">
+      <li class="nav-item"><a class="nav-link text-dark" href="#events">Events</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="#gallery">Gallery</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="#register">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Events Section -->
+    <section id="events" class="mb-5">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Summer Concert</h5>
+              <p class="card-text">Live music in the park with local bands.</p>
+              <p class="text-success fw-bold">Price: $25</p>
+              <button class="btn btn-primary w-100">Register</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Food Festival</h5>
+              <p class="card-text">Enjoy dishes from local vendors and chefs.</p>
+              <p class="text-success fw-bold">Price: $15</p>
+              <button class="btn btn-success w-100">Get Tickets</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Art Workshop</h5>
+              <p class="card-text">Create art with local artists. All supplies included.</p>
+              <p class="text-success fw-bold">Price: $10</p>
+              <button class="btn btn-warning w-100">Join</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="mb-5">
+      <h2 class="text-center mb-4">Event Photos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop" class="card-img-top" alt="Concert">
+            <div class="card-body">
+              <p class="card-text fw-bold">Summer Concert</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop" class="card-img-top" alt="Food Festival">
+            <div class="card-body">
+              <p class="card-text fw-bold">Food Festival</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop" class="card-img-top" alt="Art Workshop">
+            <div class="card-body">
+              <p class="card-text fw-bold">Art Workshop</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="mb-5">
+      <h2 class="text-center mb-4">Register for Events</h2>
+      <form id="registrationForm" class="bg-light p-4 rounded shadow-sm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="eventType" class="form-label">Choose Event</label>
+          <select id="eventType" class="form-select" required>
+            <option value="">Select an event</option>
+            <option value="concert">Summer Concert</option>
+            <option value="festival">Food Festival</option>
+            <option value="workshop">Art Workshop</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Additional Notes</label>
+          <textarea id="message" class="form-control" rows="4" placeholder="Any special requirements?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Register Now</button>
+        <button type="button" class="btn btn-secondary ms-2" onclick="clearForm()">Clear</button>
+        <div id="successMessage" class="alert alert-success mt-3 success-message">
+          Thank you for registering! We'll contact you soon.
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container text-center bg-dark text-white rounded-pill py-3 mt-4">
+    <p class="mb-0">&copy; 2025 Community Event Portal. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ Bootstrap Bundle with JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const eventType = document.getElementById('eventType').value;
+      const messageBox = document.getElementById('successMessage');
+
+      if (name && eventType) {
+        messageBox.style.display = 'block';
+        this.reset();
+      }
+    });
+
+    function clearForm() {
+      document.getElementById('registrationForm').reset();
+      document.getElementById('successMessage').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
